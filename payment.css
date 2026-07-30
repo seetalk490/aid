@@ -1,0 +1,237 @@
+/* =====================================================================
+   AL ISHARAH INSTITUTE FOR DEAF (AID) — Payment Page
+   Soft blue + white, rounded cards, professional educational look.
+===================================================================== */
+
+:root{
+  --blue-900:#123255;
+  --blue-700:#1f5c8f;
+  --blue-500:#3f83b8;
+  --blue-200:#cfe4f3;
+  --blue-100:#eaf4fb;
+  --green-600:#1f9d6f;
+  --green-500:#2fb886;
+  --green-100:#e2f7ee;
+  --red-600:#d64545;
+  --red-100:#fdecec;
+  --white:#ffffff;
+  --ink:#152436;
+  --ink-soft:#5a6c7d;
+  --line:#e1ecf3;
+  --bg:#f4f9fc;
+
+  --font-head:'Poppins', sans-serif;
+  --font-body:'Inter', sans-serif;
+
+  --r-lg:20px;
+  --r-md:14px;
+  --r-sm:10px;
+  --shadow-sm:0 2px 10px rgba(18,50,85,.06);
+  --shadow-md:0 14px 34px rgba(18,50,85,.10);
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--ink);
+  font-size:16.5px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3{ font-family:var(--font-head); color:var(--blue-900); }
+a{ color:var(--blue-700); text-decoration:none; }
+dl, dt, dd{ margin:0; }
+
+a:focus-visible, button:focus-visible{
+  outline:3px solid var(--green-600);
+  outline-offset:2px;
+  border-radius:6px;
+}
+
+/* ===================================================================
+   TOP BAR
+=================================================================== */
+.topbar{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 28px; background:var(--white); border-bottom:1px solid var(--line);
+}
+.brand{ display:flex; align-items:center; gap:10px; }
+.brand-badge{
+  width:40px; height:40px; border-radius:12px; flex:none;
+  background:linear-gradient(135deg, var(--blue-700), var(--green-600));
+  color:var(--white); display:flex; align-items:center; justify-content:center; font-size:17px;
+}
+.brand-name{ font-family:var(--font-head); font-weight:700; font-size:15.5px; color:var(--blue-900); }
+.brand-name small{ font-family:var(--font-body); font-weight:500; color:var(--ink-soft); font-size:12.5px; }
+.topbar-secure{
+  display:flex; align-items:center; gap:8px; font-family:var(--font-head); font-weight:600;
+  font-size:13.5px; color:var(--green-600); background:var(--green-100); padding:8px 16px; border-radius:100px;
+}
+
+/* ===================================================================
+   PAGE LAYOUT
+=================================================================== */
+.page{ padding:44px 20px 70px; }
+.pay-wrap{ max-width:760px; margin:0 auto; }
+
+.page-head{ text-align:center; margin-bottom:32px; }
+.page-eyebrow{
+  display:inline-block; font-family:var(--font-head); font-weight:600; font-size:13px;
+  letter-spacing:.06em; text-transform:uppercase; color:var(--blue-700);
+  background:var(--blue-100); padding:6px 16px; border-radius:100px; margin-bottom:14px;
+}
+.page-head h1{ font-size:clamp(24px,4vw,30px); margin-bottom:8px; }
+.page-head p{ color:var(--ink-soft); font-size:16px; }
+
+/* ===================================================================
+   CARDS + GRID
+=================================================================== */
+.grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-bottom:22px; }
+@media (max-width:720px){ .grid{ grid-template-columns:1fr; } }
+
+.card{
+  background:var(--white); border:1px solid var(--line); border-radius:var(--r-lg);
+  box-shadow:var(--shadow-sm); padding:28px; margin-bottom:22px;
+}
+.card:last-child{ margin-bottom:0; }
+.card h2{
+  font-size:16.5px; display:flex; align-items:center; gap:10px; margin-bottom:20px;
+}
+.card h2 i{ color:var(--green-600); font-size:15px; }
+
+/* ===================================================================
+   STUDENT INFO
+=================================================================== */
+.student-info{ display:flex; align-items:center; gap:16px; margin-bottom:20px; }
+.student-photo{
+  width:64px; height:64px; border-radius:50%; flex:none;
+  background:var(--blue-100); color:var(--blue-500);
+  display:flex; align-items:center; justify-content:center; font-size:24px;
+  border:2px solid var(--blue-200); overflow:hidden;
+}
+.student-photo img{ width:100%; height:100%; object-fit:cover; }
+.student-details h3{ font-size:17px; margin-bottom:4px; }
+.student-id{ font-size:13px; color:var(--ink-soft); font-weight:600; }
+
+.detail-list{ display:flex; flex-direction:column; gap:12px; }
+.detail-row{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.detail-row dt{ font-size:14px; color:var(--ink-soft); font-weight:600; }
+.detail-row dd{ font-size:14.5px; font-weight:600; color:var(--ink); text-align:right; }
+
+/* ===================================================================
+   SUBSCRIPTION / PLAN
+=================================================================== */
+.plan-box{
+  display:flex; align-items:center; justify-content:space-between;
+  background:var(--blue-100); border-radius:var(--r-md); padding:18px 20px; margin-bottom:20px;
+}
+.plan-tag{ font-family:var(--font-head); font-weight:700; font-size:14px; color:var(--blue-900); }
+.plan-fee{ display:flex; align-items:baseline; gap:6px; }
+.plan-fee b{ font-family:var(--font-head); font-size:24px; color:var(--blue-900); }
+.plan-fee span{ font-size:13px; color:var(--ink-soft); }
+
+.status-pill{
+  font-family:var(--font-head); font-weight:700; font-size:12px; padding:5px 12px; border-radius:100px;
+}
+.status-pill.pending{ background:#fff3d6; color:#a9760a; }
+.status-pill.active{ background:var(--green-100); color:var(--green-600); }
+
+/* ===================================================================
+   PAYMENT METHODS
+=================================================================== */
+.gateway-note{
+  font-size:14px; color:var(--ink-soft); background:var(--blue-100); border-radius:var(--r-sm);
+  padding:12px 16px; margin-bottom:20px; display:flex; align-items:center; gap:10px;
+}
+.gateway-note i{ color:var(--blue-700); }
+
+.method-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:26px; }
+.method-chip{
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  border:1.5px solid var(--line); border-radius:var(--r-sm); padding:16px 10px;
+  font-family:var(--font-head); font-weight:600; font-size:12.5px; color:var(--ink);
+  transition:border-color .2s ease, background .2s ease, transform .2s ease;
+}
+.method-chip:hover{ border-color:var(--blue-200); background:var(--blue-100); transform:translateY(-2px); }
+.method-chip i{ font-size:20px; color:var(--blue-700); }
+@media (max-width:480px){ .method-grid{ grid-template-columns:repeat(2,1fr); } }
+
+.btn-pay{
+  width:100%; font-family:var(--font-head); font-weight:700; font-size:17px; color:var(--white);
+  background:var(--green-600); border:none; border-radius:100px; padding:18px;
+  display:flex; align-items:center; justify-content:center; gap:10px; cursor:pointer;
+  box-shadow:0 10px 26px rgba(31,157,111,.28);
+  transition:background .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.btn-pay:hover{ background:var(--green-500); transform:translateY(-2px); box-shadow:0 14px 32px rgba(31,157,111,.34); }
+.btn-pay:disabled{ opacity:.75; cursor:not-allowed; transform:none; }
+
+.secure-hint{
+  display:flex; align-items:center; gap:8px; justify-content:center;
+  font-size:13px; color:var(--ink-soft); margin-top:14px;
+}
+.secure-hint i{ color:var(--green-600); }
+
+/* ===================================================================
+   PAYMENT HISTORY TABLE
+=================================================================== */
+.table-wrap{ overflow-x:auto; }
+.history-table{ width:100%; border-collapse:collapse; font-size:14px; min-width:480px; }
+.history-table th{
+  text-align:left; font-family:var(--font-head); font-weight:600; font-size:12.5px;
+  text-transform:uppercase; letter-spacing:.04em; color:var(--ink-soft);
+  padding:10px 12px; border-bottom:2px solid var(--line);
+}
+.history-table td{ padding:14px 12px; border-bottom:1px solid var(--line); color:var(--ink); }
+.history-table tbody tr:last-child td{ border-bottom:none; }
+.history-table .empty-row td{ text-align:center; color:var(--ink-soft); padding:26px 12px; }
+
+.table-status{ font-family:var(--font-head); font-weight:700; font-size:12px; padding:5px 12px; border-radius:100px; }
+.table-status.paid{ background:var(--green-100); color:var(--green-600); }
+.table-status.failed{ background:var(--red-100); color:var(--red-600); }
+
+/* ===================================================================
+   STATUS VIEWS (processing / success / failed)
+=================================================================== */
+.view[hidden]{ display:none; }
+
+.status-card{ text-align:center; padding:48px 32px; }
+.status-icon{
+  width:78px; height:78px; border-radius:50%; margin:0 auto 22px;
+  display:flex; align-items:center; justify-content:center; font-size:34px;
+}
+.status-icon.processing{ background:var(--blue-100); color:var(--blue-700); }
+.status-icon.success{ background:var(--green-100); color:var(--green-600); }
+.status-icon.failed{ background:var(--red-100); color:var(--red-600); }
+
+.status-card h2{ font-size:22px; margin-bottom:8px; }
+.status-card p{ color:var(--ink-soft); font-size:15px; }
+.status-sub{ font-family:var(--font-head); font-weight:600; color:var(--green-600) !important; margin-bottom:24px !important; }
+
+.receipt-list{ text-align:left; max-width:380px; margin:0 auto 30px; background:var(--bg); border-radius:var(--r-md); padding:20px 22px; }
+
+.status-actions{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:8px; }
+
+.btn-primary{
+  font-family:var(--font-head); font-weight:700; font-size:15px; color:var(--white);
+  background:var(--blue-700); border:none; border-radius:100px; padding:14px 28px;
+  display:inline-flex; align-items:center; gap:9px; cursor:pointer;
+  transition:background .2s ease, transform .2s ease;
+}
+.btn-primary:hover{ background:var(--blue-500); transform:translateY(-2px); }
+
+.btn-outline{
+  font-family:var(--font-head); font-weight:700; font-size:15px; color:var(--blue-700);
+  background:var(--white); border:2px solid var(--blue-200); border-radius:100px; padding:12px 26px;
+  display:inline-flex; align-items:center; gap:9px; cursor:pointer;
+  transition:border-color .2s ease, transform .2s ease;
+}
+.btn-outline:hover{ border-color:var(--blue-500); transform:translateY(-2px); }
+
+/* ===================================================================
+   FOOTER
+=================================================================== */
+.site-footer{ text-align:center; padding:24px 20px; color:var(--ink-soft); font-size:13px; }

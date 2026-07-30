@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment — AL ISHARAH INSTITUTE FOR DEAF (AID)</title>
+<meta name="description" content="Complete your monthly subscription payment to access your AID course dashboard.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+<!-- ===========================================================
+     TOP BAR
+=========================================================== -->
+<header class="topbar">
+  <a href="#" class="brand">
+    <span class="brand-badge"><i class="fa-solid fa-hands"></i></span>
+    <span class="brand-name">AL ISHARAH INSTITUTE FOR DEAF <small>(AID)</small></span>
+  </a>
+  <div class="topbar-secure"><i class="fa-solid fa-lock"></i> Secure Payment</div>
+</header>
+
+<main class="page">
+  <div class="pay-wrap">
+
+    <!-- =========================================================
+         PAGE INTRO
+    ========================================================= -->
+    <section class="page-head">
+      <span class="page-eyebrow">Step 2 of 2</span>
+      <h1>Complete Your Payment</h1>
+      <p>Finish your subscription payment to unlock your course dashboard.</p>
+    </section>
+
+    <!-- =========================================================
+         VIEW 1 — PAYMENT VIEW (student info, plan, methods)
+    ========================================================= -->
+    <div id="paymentView" class="view">
+
+      <div class="grid">
+
+        <!-- ---------------- STUDENT INFO CARD ---------------- -->
+        <section class="card" aria-labelledby="studentInfoHeading">
+          <h2 id="studentInfoHeading"><i class="fa-solid fa-id-card"></i> Student Information</h2>
+
+          <div class="student-info">
+            <div class="student-photo" id="studentPhoto" aria-hidden="true">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="student-details">
+              <h3 id="studentName">—</h3>
+              <span class="student-id" id="studentId">Student ID: —</span>
+            </div>
+          </div>
+
+          <dl class="detail-list">
+            <div class="detail-row"><dt>Class</dt><dd id="studentClass">—</dd></div>
+            <div class="detail-row"><dt>Medium</dt><dd id="studentMedium">—</dd></div>
+            <div class="detail-row"><dt>School Name</dt><dd id="studentSchool">—</dd></div>
+            <div class="detail-row"><dt>District</dt><dd id="studentDistrict">—</dd></div>
+          </dl>
+        </section>
+
+        <!-- ---------------- SUBSCRIPTION CARD ---------------- -->
+        <section class="card" aria-labelledby="subInfoHeading">
+          <h2 id="subInfoHeading"><i class="fa-solid fa-file-invoice-dollar"></i> Subscription Information</h2>
+
+          <div class="plan-box">
+            <span class="plan-tag" id="planTag">—</span>
+            <div class="plan-fee">
+              <b id="planFee">₹0</b>
+              <span>/ month</span>
+            </div>
+          </div>
+
+          <dl class="detail-list">
+            <div class="detail-row">
+              <dt>Subscription Status</dt>
+              <dd><span class="status-pill pending" id="subStatus">Payment Pending</span></dd>
+            </div>
+            <div class="detail-row"><dt>Current Plan</dt><dd id="currentPlan">Monthly Tuition Plan</dd></div>
+            <div class="detail-row"><dt>Next Renewal Date</dt><dd id="renewalDate">—</dd></div>
+          </dl>
+        </section>
+      </div>
+
+      <!-- ---------------- PAYMENT METHOD CARD ---------------- -->
+      <section class="card" aria-labelledby="paymentMethodHeading">
+        <h2 id="paymentMethodHeading"><i class="fa-solid fa-credit-card"></i> Payment Method</h2>
+        <p class="gateway-note"><i class="fa-solid fa-shield-halved"></i> Payments are processed securely via the <strong>PhonePe Payment Gateway</strong>.</p>
+
+        <div class="method-grid" role="group" aria-label="Available payment methods">
+          <div class="method-chip"><i class="fa-solid fa-qrcode"></i><span>UPI</span></div>
+          <div class="method-chip"><i class="fa-solid fa-mobile-screen-button"></i><span>PhonePe</span></div>
+          <div class="method-chip"><i class="fa-brands fa-google-pay"></i><span>Google Pay</span></div>
+          <div class="method-chip"><i class="fa-solid fa-credit-card"></i><span>Debit Card</span></div>
+          <div class="method-chip"><i class="fa-regular fa-credit-card"></i><span>Credit Card</span></div>
+          <div class="method-chip"><i class="fa-solid fa-building-columns"></i><span>Net Banking</span></div>
+        </div>
+
+        <button type="button" class="btn-pay" id="payNowBtn">
+          <span class="btn-label"><i class="fa-solid fa-lock"></i> Pay Now — <span id="payAmountLabel">₹0</span></span>
+          <span class="btn-spinner" hidden><i class="fa-solid fa-spinner fa-spin"></i> Connecting to PhonePe...</span>
+        </button>
+        <p class="secure-hint"><i class="fa-solid fa-shield-halved"></i> Your payment is verified securely on our server. Access is granted only after verification.</p>
+      </section>
+
+      <!-- ---------------- PAYMENT HISTORY CARD ---------------- -->
+      <section class="card" aria-labelledby="historyHeading">
+        <h2 id="historyHeading"><i class="fa-solid fa-clock-rotate-left"></i> Payment History</h2>
+
+        <div class="table-wrap">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Transaction ID</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="historyTableBody">
+              <!-- Rows are populated by payment.js from backend data.
+                   A placeholder empty state is shown until then. -->
+              <tr class="empty-row">
+                <td colspan="4">No payment history yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- =========================================================
+         VIEW 2 — PROCESSING STATE (waiting on gateway / backend)
+    ========================================================= -->
+    <div id="processingView" class="view" hidden>
+      <section class="card status-card">
+        <div class="status-icon processing"><i class="fa-solid fa-spinner fa-spin"></i></div>
+        <h2>Processing Your Payment</h2>
+        <p>Please do not close or refresh this page. We are confirming your payment with the bank.</p>
+      </section>
+    </div>
+
+    <!-- =========================================================
+         VIEW 3 — PAYMENT SUCCESS
+    ========================================================= -->
+    <div id="successView" class="view" hidden>
+      <section class="card status-card success">
+        <div class="status-icon success"><i class="fa-solid fa-circle-check"></i></div>
+        <h2>Payment Successful</h2>
+        <p class="status-sub">Subscription Activated</p>
+
+        <dl class="detail-list receipt-list">
+          <div class="detail-row"><dt>Transaction ID</dt><dd id="txnId">—</dd></div>
+          <div class="detail-row"><dt>Amount Paid</dt><dd id="txnAmount">—</dd></div>
+          <div class="detail-row"><dt>Payment Date</dt><dd id="txnDate">—</dd></div>
+          <div class="detail-row"><dt>Next Renewal Date</dt><dd id="txnRenewal">—</dd></div>
+        </dl>
+
+        <div class="status-actions">
+          <button type="button" class="btn-primary" id="goDashboardBtn">
+            <i class="fa-solid fa-arrow-right"></i> Go to Dashboard
+          </button>
+          <button type="button" class="btn-outline" id="downloadReceiptBtn">
+            <i class="fa-solid fa-download"></i> Download Receipt
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- =========================================================
+         VIEW 4 — PAYMENT FAILED
+    ========================================================= -->
+    <div id="failedView" class="view" hidden>
+      <section class="card status-card failed">
+        <div class="status-icon failed"><i class="fa-solid fa-circle-xmark"></i></div>
+        <h2>Payment Failed</h2>
+        <p>Please try again.</p>
+
+        <div class="status-actions">
+          <button type="button" class="btn-primary" id="retryPaymentBtn">
+            <i class="fa-solid fa-rotate-right"></i> Retry Payment
+          </button>
+          <button type="button" class="btn-outline" id="contactAdminBtn">
+            <i class="fa-solid fa-headset"></i> Contact Admin
+          </button>
+        </div>
+      </section>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>Copyright &copy; 2026 AL ISHARAH INSTITUTE FOR DEAF (AID). All payments are processed securely.</p>
+</footer>
+
+<script src="payment.js"></script>
+</body>
+</html>
