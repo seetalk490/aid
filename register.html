@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration — AIDEAF TN</title>
+<meta name="description" content="Create your AIDEAF TN student account to start online tuition.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===========================================================
+     HEADER / BRAND BAR
+=========================================================== -->
+<header class="topbar">
+  <a href="#" class="brand">
+    <span class="brand-badge"><i class="fa-solid fa-hands"></i></span>
+    <span class="brand-name">AIDEAF TN</span>
+  </a>
+  <a href="#" class="topbar-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+</header>
+
+<!-- ===========================================================
+     MAIN
+=========================================================== -->
+<main class="page">
+  <div class="reg-wrap">
+
+    <!-- Page intro -->
+    <section class="page-head">
+      <span class="page-eyebrow">AIDEAF TN</span>
+      <h1>Student Registration</h1>
+      <p>Create your account to start learning.</p>
+    </section>
+
+    <div class="reg-card">
+
+      <!-- Step indicator -->
+      <div class="steps" aria-hidden="true">
+        <div class="step active" data-step="1"><span>1</span>Account</div>
+        <div class="step-line"></div>
+        <div class="step" data-step="2"><span>2</span>Academic</div>
+        <div class="step-line"></div>
+        <div class="step" data-step="3"><span>3</span>Confirm</div>
+      </div>
+
+      <form id="registerForm" novalidate>
+
+        <!-- =======================================================
+             OPTION 1 — GOOGLE SIGN UP
+        ======================================================= -->
+        <div class="form-block">
+          <button type="button" class="btn-google" id="googleBtn">
+            <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
+              <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l6-6C34.6 5.5 29.6 3.5 24 3.5 12.7 3.5 3.5 12.7 3.5 24S12.7 44.5 24 44.5 44.5 35.3 44.5 24c0-1.2-.1-2.4-.3-3.5z"/>
+              <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.9 18.9 13 24 13c3.1 0 5.9 1.2 8 3.1l6-6C34.6 5.5 29.6 3.5 24 3.5c-7.7 0-14.4 4.4-17.7 10.8z"/>
+              <path fill="#4CAF50" d="M24 44.5c5.5 0 10.4-1.9 14.2-5.1l-6.6-5.4C29.6 35.6 27 36.5 24 36.5c-5.3 0-9.7-3.6-11.3-8.5l-6.6 5.1C9.5 39.9 16.2 44.5 24 44.5z"/>
+              <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.3 5.6l6.6 5.4C41.7 35.7 44.5 30.4 44.5 24c0-1.2-.1-2.4-.3-3.5z"/>
+            </svg>
+            Continue with Google
+          </button>
+
+          <div class="divider"><span>or register with mobile details</span></div>
+        </div>
+
+        <!-- =======================================================
+             1. PERSONAL INFORMATION
+        ======================================================= -->
+        <fieldset class="form-block">
+          <legend><i class="fa-solid fa-user"></i> Personal Information</legend>
+
+          <div class="field">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+            <span class="error-msg" data-for="fullName"></span>
+          </div>
+
+          <div class="field">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number" inputmode="numeric" maxlength="10" required>
+            <span class="error-msg" data-for="mobile"></span>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address <span class="optional">(Optional)</span></label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+            <span class="error-msg" data-for="email"></span>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="password">Password</label>
+              <div class="password-wrap">
+                <input type="password" id="password" name="password" placeholder="Create a password" minlength="6" required>
+                <button type="button" class="toggle-pass" data-target="password" aria-label="Show password"><i class="fa-solid fa-eye"></i></button>
+              </div>
+              <span class="error-msg" data-for="password"></span>
+            </div>
+
+            <div class="field">
+              <label for="confirmPassword">Confirm Password</label>
+              <div class="password-wrap">
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" minlength="6" required>
+                <button type="button" class="toggle-pass" data-target="confirmPassword" aria-label="Show password"><i class="fa-solid fa-eye"></i></button>
+              </div>
+              <span class="error-msg" data-for="confirmPassword"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- =======================================================
+             2. ACADEMIC INFORMATION
+        ======================================================= -->
+        <fieldset class="form-block">
+          <legend><i class="fa-solid fa-graduation-cap"></i> Academic Information</legend>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="studentClass">Select Class</label>
+              <select id="studentClass" name="studentClass" required>
+                <option value="" disabled selected>Choose class</option>
+                <option value="9">9th</option>
+                <option value="10">10th</option>
+                <option value="11">11th</option>
+                <option value="12">12th</option>
+              </select>
+              <span class="error-msg" data-for="studentClass"></span>
+            </div>
+
+            <div class="field">
+              <label for="medium">Select Medium</label>
+              <select id="medium" name="medium" required>
+                <option value="" disabled selected>Choose medium</option>
+                <option value="english">English Medium</option>
+                <option value="tamil">Tamil Medium</option>
+              </select>
+              <span class="error-msg" data-for="medium"></span>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="schoolName">School Name</label>
+              <input type="text" id="schoolName" name="schoolName" placeholder="Enter your school name" required>
+              <span class="error-msg" data-for="schoolName"></span>
+            </div>
+
+            <div class="field">
+              <label for="district">District</label>
+              <input type="text" id="district" name="district" placeholder="Enter your district" required>
+              <span class="error-msg" data-for="district"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- =======================================================
+             3. COURSE CONFIRMATION — auto-filled by script.js
+        ======================================================= -->
+        <div class="form-block">
+          <div class="course-box" id="courseBox">
+            <div class="course-box-empty" id="courseEmpty">
+              <i class="fa-solid fa-book-open"></i>
+              <p>Select your class and medium above to see your course details.</p>
+            </div>
+
+            <div class="course-box-filled" id="courseFilled" hidden>
+              <div class="course-box-head">
+                <span class="course-box-tag" id="courseTag">—</span>
+                <h3>Your Course</h3>
+              </div>
+              <div class="course-subjects">
+                <span class="subjects-label">Subjects</span>
+                <ul id="subjectList"></ul>
+              </div>
+              <div class="course-fee-row">
+                <span>Monthly Fee</span>
+                <b id="courseFee">₹0 / Month</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =======================================================
+             TERMS & CONDITIONS
+        ======================================================= -->
+        <div class="form-block">
+          <label class="checkbox-row">
+            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+            <span>I agree to <a href="#">AIDEAF TN Terms and Conditions</a>.</span>
+          </label>
+          <span class="error-msg" data-for="agreeTerms"></span>
+
+          <ul class="rules-list">
+            <li><i class="fa-solid fa-circle-check"></i> One student account only.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Account sharing is not allowed.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Course access starts after payment.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Monthly subscription required.</li>
+          </ul>
+        </div>
+
+        <!-- =======================================================
+             SUBMIT
+        ======================================================= -->
+        <div class="form-block">
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span class="btn-label"><i class="fa-solid fa-user-plus"></i> Create Account</span>
+            <span class="btn-spinner" hidden><i class="fa-solid fa-spinner fa-spin"></i> Creating account...</span>
+          </button>
+
+          <div class="success-msg" id="successMsg" role="status" aria-live="polite" hidden>
+            <i class="fa-solid fa-circle-check"></i>
+            Registration Successful. Redirecting to Payment...
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <p class="login-hint">Already have an account? <a href="#">Student Login</a></p>
+  </div>
+</main>
+
+<!-- ===========================================================
+     FOOTER
+=========================================================== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-badge small"><i class="fa-solid fa-hands"></i></span>
+      <div>
+        <strong>AIDEAF TN</strong>
+        <p>Online Tuition for Deaf Students</p>
+      </div>
+    </div>
+    <nav class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+    </nav>
+  </div>
+  <p class="footer-copy">Copyright &copy; 2026 AIDEAF TN</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
